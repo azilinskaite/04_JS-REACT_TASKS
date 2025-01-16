@@ -1,28 +1,33 @@
-/**
- * TODO write a JavaScript function that takes a string and returns it in revserse order.
- * DO NOT use the built-in reverse() method.
- * Should return the reversed string.
- * For example:
- *   reverseString("hello") should return "olleh"
- *   reverseString("world") should return "dlrow"
- *   reverseString("12345") should return "54321"
- */
-function reverseString() {}
+// 1
+function reverseString() {
+  let string = prompt("Give me a word");
+  let reversedString = "";
+   for (let i = string.length - 1; i >= 0; i--) {
+    reversedString += string[i];
+   }
+   console.log(reversedString);
+   return reversedString;
+};
 
-/**
- * TODO write a JavaScript function that takes a number and returns it in the reverse order.
- * Should return the reversed number.
- * For example:
- *   reverseNumber(12345) should return 54321
- *   reverseNumber(98765) should return 56789
- *   reverseNumber(101010) should return 10101
- */
+reverseString();
 
-function reverseNumber() {}
 
-/**
- * TODO destruct the following object to get name and age.
- */
+// 2
+function reverseNumber() {
+  let newNumber = prompt("Give me a number").toString();
+  let reversedNumber = "";
+   for (let i = newNumber.length - 1; i >= 0; i--) {
+    reversedNumber += newNumber[i];
+   }
+   console.log(Number(reversedNumber));
+   return Number(reversedNumber);
+};
+
+// DOES IT MAKE SENSE TO TURN NUMBER INTO STRING AND THEN NUMBER AGAIN?
+reverseNumber();
+
+
+//3
 const person = {
   name: "John",
   info: {
@@ -32,22 +37,30 @@ const person = {
   },
 };
 
-/**
- * TODO destruct the following array the first and second element, and the remaining elements in a third variable.
- */
+console.log(person.name);
+console.log(person.info.age);
 
+
+//4
 const thisArray = ["apple", "banana", "cherry", "dates", "elderberry", "fig"];
+const [first, second, ...rest] = thisArray;
+console.log(first);
+console.log(second);
+console.log(rest);
 
-/**
- * !!!!OPTIONAL!!!!
- * TODO Write a JavaScript function that checks if a string is a palindrome. A palindrome is a word, phrase, number, or other sequence of characters that reads * the same forward and backward. For example, "madam" is a palindrome.
- * The function should return true if the string is a palindrome and false if it is not.
- * For example:
- *    isPalindrome("madam") should return true
- *    isPalindrome("hello") should return false
- *    isPalindrome("12321") should return true
- *    isPalindrome("race car") should return true
- *    isPalindrome("coding") should return false
- */
 
-function isPalindrome() {}
+//5
+function isPalindrome() {
+  let string = prompt("Give me a palindrome");
+  let reversedString = "";
+   for (let i = string.length - 1; i >= 0; i--) {
+    reversedString += string[i];
+   }
+   if (reversedString === string) {
+    return `${string} is a palindrome!`
+   } else {
+    return "try another word"
+   }
+};
+
+isPalindrome();
